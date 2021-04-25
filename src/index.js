@@ -5,10 +5,8 @@ import { newTodoHtml } from './js/componentes.js';
 
 
 export const todoList = new TodoList();
-// const tarea = new Todo('');
 
-// todoList.newTodo(tarea);
-
-// console.log(todoList);
-
-// newTodoHtml(tarea);
+todoList.Todos.forEach(todo => 
+{
+    newTodoHtml(todo);
+});
