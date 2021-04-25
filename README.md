@@ -1,5 +1,5 @@
-# Webpack Starter
-Este es el proyecto inicial para crear aplicaciones utilizando webpack
+# List TODO
+Página web para listar tareas
 
 
 ## Notas:
