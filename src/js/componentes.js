@@ -2,7 +2,6 @@ import { Todo } from '../classes/indexAll.js';
 import { todoList } from '../index.js';
 
 // Referencias en el HTML
-
 const divTodoList = document.querySelector('.todo-list');
 const txtInput = document.querySelector('.new-todo');
 
@@ -40,4 +39,25 @@ txtInput.addEventListener('keyup', ( event ) =>
 
         txtInput.value = '';
     }
+});
+
+divTodoList.addEventListener('click', ( event ) =>
+{
+    const nameElement = event.target.localName; // input, label, button
+    const todoElement = event.target.parentElement.parentElement;
+    const todoId = todoElement.getAttribute('data-id');
+
+    if(nameElement.includes('input'))// click en el check
+    {
+        todoList.checkTodo(todoId);
+        todoElement.classList.toggle('completed');
+    }
+    else 
+    if(nameElement.includes('button'))// hay que borrar el todo
+    {
+        todoList.deleteTodo(todoId);
+        divTodoList.removeChild(todoElement);
+    }
+
+    console.log(todoList);
 });
