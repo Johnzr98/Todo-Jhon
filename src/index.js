@@ -10,3 +10,5 @@ todoList.Todos.forEach(todo =>
 {
     newTodoHtml(todo);
 });
+
+console.log('Todos: ',todoList.Todos);

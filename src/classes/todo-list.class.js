@@ -1,3 +1,4 @@
+import { Todo } from "./todo.class";
 
 export class TodoList{
 
@@ -48,5 +49,7 @@ export class TodoList{
     getDataLocalStorage()
     {
         this.Todos = localStorage.getItem('todo') ? JSON.parse(localStorage.getItem('todo')) : [];
+        //para que el arreglo quede con la instancia de la clase Todo
+        this.Todos = this.Todos.map( obj  => Todo.fromJson( obj ));
     }
 }
